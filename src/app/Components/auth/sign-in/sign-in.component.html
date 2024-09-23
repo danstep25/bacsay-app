@@ -1,0 +1,30 @@
+<div aria-label="Sign In Container" class="h-screen background">
+  <div aria-label="Sign In Wrapper">
+    <div class="sign-in-grid flex flex-col md:grid">
+      <div class="relative md:left-[30%] md:top-[40%]">
+        <img [src]="labels.logoPath" alt="" class="ps-[12%]">
+      </div>
+      <div aria-label="Sign In Form Container">
+        <div aria-label="Sign In Form Wrapper" class="w-[80%] relative border rounded-lg ps-2 bg-gray-100 left-[10%] top-[50%]">
+          <div aria-label="Sign In Header" class="flex ps-4 pt-12 pb-4">
+            <mat-icon class="scale-[2.7] text-gray-300">lock_person</mat-icon>  
+            <h2 class="text-gray-500 relative left-[30px]">Sign In</h2>
+          </div>
+          <div aria-label="Sign In Body">
+            <form [formGroup]="loginForm" #loginNgForm="ngForm">
+              <mat-form-field appearance="outline" class="w-[100%] px-6">
+                <input matInput [formControlName]="'email'" placeholder="Email">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="w-[100%] px-6">
+                <input type="password" matInput [formControlName]="'password'" placeholder="Password">
+              </mat-form-field>
+              <div class="px-6 py-4">
+                <button mat-raised-button color="primary" class="w-[100%]" (click)="login()">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
