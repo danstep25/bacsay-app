@@ -68,7 +68,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2k10gb",
+                  "maximumWarning": "10gb",
                   "maximumError": "10gb"
                 }
               ],
@@ -121,5 +121,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

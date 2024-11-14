@@ -1,1 +1,78 @@
-<p>dashboard works!</p>
+<div class="flex">
+  <app-side-navbar></app-side-navbar>
+  
+  <div class="content">
+    <div class="header-wrapper">
+      <div class="title p-4 font-bold text-[20px]">
+        <p>WATER IRRIGATION MONITORING SYSTEM FOR</p>
+        <P>BARANGAY BACSAY, CAMILING ,TARLAC</P>
+      </div>
+    </div>
+    <div class="body-wrapper">
+      <div class="water-level-1 flex flex-row">
+        <ngx-charts-bar-vertical
+        [view]="view"
+        [results]="WaterLevelSampleData1"
+        [legendPosition]="legendPosition"
+        [legend]="legend"
+        [legendTitle]="legendTitle"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [showGridLines]="showGridLines"
+        [schemeType]="schemeType"
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        ></ngx-charts-bar-vertical>
+
+        <ngx-charts-gauge
+          [results]="WaterFlowRateData1"
+          [view]="gaugeDimension"
+          [animations]="animations"
+          [max]="maxGaugeValue"
+          [angleSpan]="angleSpan"
+          [startAngle]="startAngle"
+          [showText]="showText"
+          [bigSegments]="largeSegments"
+          [smallSegments]="smallSegments"
+          [textValue]="textValue"
+          [legend]="legend"
+        >
+        </ngx-charts-gauge>
+      </div>
+      <div class="water-level-2 flex flex-row">
+        <ngx-charts-bar-vertical
+        [view]="view"
+        [results]="WaterLevelSampleData2"
+        [legendPosition]="legendPosition"
+        [legend]="legend"
+        [legendTitle]="legendTitle"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [xAxisLabel]="xAxisLabe2"
+        [showGridLines]="showGridLines"
+        [schemeType]="schemeType"
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        ></ngx-charts-bar-vertical>
+
+        <ngx-charts-gauge
+          [results]="WaterFlowRateData1"
+          [view]="gaugeDimension"
+          [animations]="animations"
+          [max]="maxGaugeValue"
+          [angleSpan]="angleSpan"
+          [startAngle]="startAngle"
+          [showText]="showText"
+          [bigSegments]="largeSegments"
+          [smallSegments]="smallSegments"
+          [textValue]="textValue"
+          [legend]="legend"
+        >
+        </ngx-charts-gauge>
+      </div>
+    </div>
+  </div>
+</div>

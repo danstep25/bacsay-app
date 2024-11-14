@@ -21,6 +21,12 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './Components/modules/dashboard/dashboard.component';
 import { SideNavbarComponent } from './Shared/navigations/side-navbar/side-navbar.component';
 import { AccountManagementComponent } from './Components/modules/user/account-management/account-management.component';
+import { AccountManagementAddEditComponent } from './Components/modules/user/account-management/account-management-add-edit/account-management-add-edit.component';
+import { RouterModule, RouterLink } from '@angular/router';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +36,7 @@ import { AccountManagementComponent } from './Components/modules/user/account-ma
     DashboardComponent,
     SideNavbarComponent,
     AccountManagementComponent,
+    AccountManagementAddEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,9 +52,15 @@ import { AccountManagementComponent } from './Components/modules/user/account-ma
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
+    RouterModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxChartsModule,
+    RouterLink
     
   ],
   providers: [
+    MatDatepickerModule,
     provideFirebaseApp(() => initializeApp({"projectId":"waterirrigationsystem-9b86e","appId":"1:234960383571:web:94fd809147a46c4726a0a6","databaseURL":"https://waterirrigationsystem-9b86e-default-rtdb.firebaseio.com","storageBucket":"waterirrigationsystem-9b86e.appspot.com","apiKey":"AIzaSyCbsRNDelghIYcFNUecodEnOZGOJ58Z2kM","authDomain":"waterirrigationsystem-9b86e.firebaseapp.com","messagingSenderId":"234960383571"})),
     provideFirestore(() => getFirestore()),
     provideDatabase(() => getDatabase()),

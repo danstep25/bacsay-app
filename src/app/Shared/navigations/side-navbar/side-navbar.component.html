@@ -1,1 +1,20 @@
-<p>side-navbar works!</p>
+<div aria-label="Navigation Main Container" class="relative w-[270px] bg-white h-screen border">
+  <div aria-label="Navigation Header Content" class="">
+    <div aria-label="Navigation Header Content Wrapper" class="border-2 flex flex-row background">
+      <img src="../../../../assets/logoapp.png" class="h-[200px] -mt-12" alt="">
+      <div class="flex justify-center flex-col items-center">
+        <span class="text-xl font-semibold">Water</span>
+        <span class="text-xl font-semibold">Irrigation</span>
+        <span class="text-xl font-semibold">System</span>
+      </div>
+    </div>
+  </div>
+
+  <div aria-label="Navigation Main Item Container">
+    <ng-container *ngFor="let navItem of navItem$ | async">
+      <div class="nav-item flex px-2 py-2 font-semibold text-[20px]" (click)="navigateItem(navItem)">
+        {{ navItem }}
+      </div>
+    </ng-container>
+  </div>
+</div>

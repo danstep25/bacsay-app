@@ -17,4 +17,19 @@ export class AccountManagementService {
           return users
     }));
   }
+
+  createUsserAccount(userData: any){
+    this._firestore.collection('Users').doc().set(userData)
+  }
+
+  deleteUserAccount(UserGuid: any){
+    this._firestore.collection('Users')
+    .doc()
+    .get()
+    .pipe(map(doc =>{
+      if(doc.exists){
+        console.log(doc.data)
+      }
+    }))
+  }
 }
