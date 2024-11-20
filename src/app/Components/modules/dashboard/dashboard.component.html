@@ -10,24 +10,27 @@
     </div>
     <div class="body-wrapper">
       <div class="water-level-1 flex flex-row">
-        <ngx-charts-bar-vertical
-        [view]="view"
-        [results]="WaterLevelSampleData1"
-        [legendPosition]="legendPosition"
-        [legend]="legend"
-        [legendTitle]="legendTitle"
-        [showXAxisLabel]="showXAxisLabel"
-        [showYAxisLabel]="showYAxisLabel"
-        [yAxisLabel]="yAxisLabel"
-        [xAxisLabel]="xAxisLabel"
-        [showGridLines]="showGridLines"
-        [schemeType]="schemeType"
-        [xAxis]="xAxis"
-        [yAxis]="yAxis"
-        ></ngx-charts-bar-vertical>
+        <ng-container *ngIf="waterLevel$ | async as waterLevel">
+          <ngx-charts-bar-vertical
+          [view]="view"
+          [results]="waterLevel"
+          [legendPosition]="legendPosition"
+          [legend]="legend"
+          [legendTitle]="legendTitle"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [showGridLines]="showGridLines"
+          [schemeType]="schemeType"
+          [xAxis]="xAxis"
+          [yAxis]="yAxis"
+          ></ngx-charts-bar-vertical>
+        </ng-container>
 
-        <ngx-charts-gauge
-          [results]="WaterFlowRateData1"
+        <ng-container *ngIf="waterFlowRate$ | async as waterFlowRate">
+          <ngx-charts-gauge
+          [results]="waterFlowRate"
           [view]="gaugeDimension"
           [animations]="animations"
           [max]="maxGaugeValue"
@@ -38,8 +41,10 @@
           [smallSegments]="smallSegments"
           [textValue]="textValue"
           [legend]="legend"
-        >
-        </ngx-charts-gauge>
+          >
+          </ngx-charts-gauge>
+        </ng-container>
+        
       </div>
       <div class="water-level-2 flex flex-row">
         <ngx-charts-bar-vertical

@@ -17,7 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { DashboardComponent } from './Components/modules/dashboard/dashboard.component';
 import { SideNavbarComponent } from './Shared/navigations/side-navbar/side-navbar.component';
 import { AccountManagementComponent } from './Components/modules/user/account-management/account-management.component';
@@ -44,6 +44,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     AngularFireModule.initializeApp(Environment.FirebaseConfig),
     
     //Form Modules
+    BrowserModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
@@ -60,6 +61,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     
   ],
   providers: [
+    DatePipe,
     MatDatepickerModule,
     provideFirebaseApp(() => initializeApp({"projectId":"waterirrigationsystem-9b86e","appId":"1:234960383571:web:94fd809147a46c4726a0a6","databaseURL":"https://waterirrigationsystem-9b86e-default-rtdb.firebaseio.com","storageBucket":"waterirrigationsystem-9b86e.appspot.com","apiKey":"AIzaSyCbsRNDelghIYcFNUecodEnOZGOJ58Z2kM","authDomain":"waterirrigationsystem-9b86e.firebaseapp.com","messagingSenderId":"234960383571"})),
     provideFirestore(() => getFirestore()),

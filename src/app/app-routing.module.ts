@@ -24,11 +24,6 @@ const routes: Routes = [
   { path: 'dashboard', 
     component: DashboardComponent 
   },
-
-  //User
-  { path: 'user', 
-    component: AccountManagementComponent 
-  },
   
 ];
 

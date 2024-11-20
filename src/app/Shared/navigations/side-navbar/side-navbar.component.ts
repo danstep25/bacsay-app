@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './side-navbar.component.html',
   styleUrl: './side-navbar.component.css'
 })
-export class SideNavbarComponent implements OnInit, OnDestroy {
+export class SideNavbarComponent implements OnDestroy {
 
   private readonly _destroy$ = new Subject<void>();
   navItem$ = this._sideNavbarService.loadNavItem();
@@ -17,10 +17,6 @@ export class SideNavbarComponent implements OnInit, OnDestroy {
     private readonly _sideNavbarService: SideNavbarService,
     private readonly _router: Router
   ){}
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnDestroy(): void {
     this._destroy$.next();
